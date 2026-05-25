@@ -34,6 +34,8 @@ La escala de resistencia de los tejidos se mide en ciclos Martindale: cuantos m�
 
 ## El Segundo Criterio: El Estilo Decorativo del Espacio
 
+![Moodboard con cinco estilos decorativos de tapicería: Tradicional, Contemporáneo, Nórdico, Mediterráneo e Industrial, con muestras de telas sobre mármol blanco](https://d2xsxph8kpxj0f.cloudfront.net/310519663634383585/MngFAqXhaHrz7Ymmgx7jmR/estilos-decorativos-tapiceria-hXXqr7fEaeUG7CFkRrq7ue.webp)
+
 Una vez establecido el nivel de resistencia necesario, el estilo decorativo del espacio es el segundo gran filtro. Cada corriente estética tiene sus tejidos y texturas de referencia, y respetarlas es fundamental para conseguir un resultado coherente y armonioso.
 
 **El estilo clásico y tradicional** se asocia naturalmente con tejidos de gran carácter: el terciopelo en tonos joya (burdeos, verde botella, azul marino), los damascos con motivos florales o geométricos, el jacquard con tramas elaboradas y el cuero genuino. Estos tejidos aportan la riqueza visual y la profundidad que caracterizan a los interiores clásicos. Un sillón Chester tapizado en terciopelo verde esmeralda o en cuero cognac es un objeto que trasciende las modas y se convierte en una pieza de colección.
