@@ -49,8 +49,9 @@ Una vez establecido el nivel de resistencia necesario, el estilo decorativo del 
 **El estilo industrial y urbano** ha ganado mucho terreno en los últimos años, especialmente en pisos de ciudad con techos altos y grandes ventanales. El cuero envejecido, el cuero sintético de calidad, los tejidos en tonos oscuros (antracita, negro, gris marengo) y las telas con acabados mate son las opciones más coherentes con este estilo. La robustez visual es la clave: los muebles industriales piden tejidos que transmitan solidez y carácter.
 
 ---
-
 ## El Tercer Criterio: El Color y la Luz
+
+![Salón de piso barcelonés con sofá tapizado en terciopelo verde salvia iluminado por luz natural cálida, junto a paleta de colores tendencia 2026: terracota, rosa polvo, verde bosque, crema y azul pizarra](https://d2xsxph8kpxj0f.cloudfront.net/310519663634383585/MngFAqXhaHrz7Ymmgx7jmR/color-luz-tapiceria-JRQKKKcn3JRvkMqrwwD7FB.webp)
 
 El color de la tela es, para muchos clientes, la primera decisión que toman. Sin embargo, en Tapizados Nova siempre recomendamos que sea la última, porque el color correcto depende de factores que solo pueden evaluarse en el contexto real del espacio.
 
@@ -63,6 +64,8 @@ Las **tendencias de color para 2026** apuntan hacia una paleta dual: por un lado
 ---
 
 ## El Cuarto Criterio: La Textura y el Tacto
+
+![Primer plano macro de cuatro texturas de tela para tapizar: terciopelo verde esmeralda, bouclé marfil, chenilla taupe y lino natural, sobre superficie de madera de roble cálida](https://d2xsxph8kpxj0f.cloudfront.net/310519663634383585/MngFAqXhaHrz7Ymmgx7jmR/textura-tacto-tapiceria-hBUQyfLWcKkVyjLCjrSs8N.webp)
 
 La textura de una tela no es solo una cuestión estética: es también una experiencia sensorial que influye directamente en cómo percibimos un espacio y cómo nos sentimos en él. Los tejidos con textura —bouclés, chenillas, terciopelos, tejidos de punto— crean una sensación de calidez y confort que los tejidos lisos no siempre pueden igualar.
 
