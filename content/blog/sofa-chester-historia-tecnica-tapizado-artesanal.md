@@ -100,4 +100,29 @@ Si tienes un Chester que quieres restaurar o si estás pensando en encargar uno 
 
 ---
 
+## Presentación: El Sofá Chester en Diapositivas
+
+Hemos preparado una presentación visual con los puntos clave de este artículo. Puedes explorarla directamente aquí o descargarla para compartirla:
+
+<div class="slides-embed" data-slides="/slides/sofa-chester/portada.html" data-count="10">
+  <a href="/slides/sofa-chester/portada.html" target="_blank" rel="noopener" class="slides-cta">
+    Ver presentación completa — El Sofá Chester (10 diapositivas)
+  </a>
+</div>
+
+**Contenido de la presentación:**
+
+1. **Portada** — El Sofá Chester: Historia, Artesanía y Elegancia Atemporal
+2. **Una Pieza Atemporal** — 250 años de historia y vigencia
+3. **1773: El Origen** — El conde de Chesterfield y el nacimiento del capitoné
+4. **El Arte del Capitoné** — Los 5 pasos del proceso artesanal
+5. **Materiales Tendencia 2026** — Cuero, terciopelo, bouclé y antimanchas
+6. **Restauración** — Por qué restaurar un Chester heredado
+7. **5 Criterios de Compra** — Lo que debes exigir y las señales de alerta
+8. **Interiorismo 2026** — 4 estilos decorativos con Chester
+9. **Tapizados Nova** — Nuestros servicios y diferenciadores
+10. **Contacto** — WhatsApp +34 611 491 661
+
+---
+
 *¿Tienes un sofá Chester en casa que necesita una nueva vida? Cuéntanos tu proyecto en los comentarios o contáctanos directamente. En Tapizados Nova, con más de 30 años de experiencia artesanal en Barcelona, transformamos muebles con historia en piezas únicas.*

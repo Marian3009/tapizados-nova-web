@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: row;
+        }
+        .image-panel {
+            width: 440px;
+            min-height: 720px;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .image-panel img {
+            width: 440px;
+            height: 720px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to right, transparent 60%, rgba(245,240,232,0.6) 100%);
+        }
+        .image-caption {
+            position: absolute;
+            bottom: 32px;
+            left: 24px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(245,240,232,0.85);
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+        .content-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 44px;
+            padding-left: 48px;
+            padding-right: 56px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.35);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #2D3B25;
+            line-height: 1.3;
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #5C3D2E;
+        }
+        .materials-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        .materials-table thead tr {
+            border-bottom: 2px solid #C9A84C;
+        }
+        .materials-table th {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            text-align: left;
+            padding-top: 0;
+            padding-bottom: 10px;
+            padding-right: 12px;
+        }
+        .materials-table tbody tr {
+            border-bottom: 1px solid rgba(74, 92, 63, 0.12);
+        }
+        .materials-table td {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: #3A2A1E;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-right: 12px;
+            vertical-align: middle;
+            line-height: 1.4;
+        }
+        .material-name {
+            font-weight: 600;
+            color: #2D3B25;
+        }
+        .material-style {
+            color: #5C3D2E;
+            font-size: 13px;
+        }
+        .stars {
+            color: #C9A84C;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        .trend-badge {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .trend-high { color: #2D3B25; }
+        .trend-top {
+            color: #C9A84C;
+            font-weight: 700;
+        }
+        .trend-always { color: #4A5C3F; }
+        .trend-rising { color: #5C3D2E; }
+        .colors-section {
+            margin-bottom: 20px;
+        }
+        .colors-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .color-chips {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .color-chip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+        .chip-swatch {
+            width: 28px;
+            height: 28px;
+            border: 1px solid rgba(74,92,63,0.2);
+        }
+        .chip-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 9px;
+            font-weight: 500;
+            color: #5C3D2E;
+            text-align: center;
+            letter-spacing: 0.5px;
+            max-width: 52px;
+            line-height: 1.3;
+        }
+        .guell-note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-top: 1px solid rgba(201,168,76,0.3);
+            padding-top: 16px;
+        }
+        .guell-diamond {
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+            background: #C9A84C;
+            transform: rotate(45deg);
+        }
+        .guell-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #3A2A1E;
+            line-height: 1.5;
+        }
+        .guell-text strong {
+            font-weight: 600;
+            color: #2D3B25;
+        }
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            margin-top: auto;
+            border-top: 1px solid rgba(74, 92, 63, 0.15);
+            padding-bottom: 28px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="image-panel">
+        <img src="/home/ubuntu/webdev-static-assets/chester-materiales-2026.jpg" alt="Muestras de telas y materiales para sofá Chester" />
+        <div class="image-overlay"></div>
+        <div class="image-caption">Catálogo de materiales · 2026</div>
+    </div>
+
+    <div class="content-panel">
+        <div class="section-header">
+            <span class="section-number">05</span>
+            <div class="section-line"></div>
+            <span class="section-label">Materiales</span>
+        </div>
+
+        <h2 class="main-title">La elección del material <em>transforma radicalmente</em> el carácter del Chester</h2>
+
+        <table class="materials-table">
+            <thead>
+                <tr>
+                    <th>Material</th>
+                    <th>Estilo</th>
+                    <th>Durabilidad</th>
+                    <th>Tendencia 2026</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="material-name">Cuero genuino</span></td>
+                    <td><span class="material-style">Clásico / Tradicional</span></td>
+                    <td><span class="stars">★★★★★</span></td>
+                    <td><span class="trend-badge trend-always">Siempre vigente</span></td>
+                </tr>
+                <tr>
+                    <td><span class="material-name">Terciopelo</span></td>
+                    <td><span class="material-style">Glamour / Lujo</span></td>
+                    <td><span class="stars">★★★★</span><span style="color:#ccc;">★</span></td>
+                    <td><span class="trend-badge trend-high">Muy alta ↑</span></td>
+                </tr>
+                <tr>
+                    <td><span class="material-name">Bouclé</span></td>
+                    <td><span class="material-style">Contemporáneo / Nórdico</span></td>
+                    <td><span class="stars">★★★★</span><span style="color:#ccc;">★</span></td>
+                    <td><span class="trend-badge trend-top">Tendencia top ★</span></td>
+                </tr>
+                <tr>
+                    <td><span class="material-name">Antimanchas</span></td>
+                    <td><span class="material-style">Familiar / Práctico</span></td>
+                    <td><span class="stars">★★★★★</span></td>
+                    <td><span class="trend-badge trend-rising">En alza ↑</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="colors-section">
+            <div class="colors-label">Colores Tendencia 2026</div>
+            <div class="color-chips">
+                <div class="color-chip">
+                    <div class="chip-swatch" style="background:#2D5A27;"></div>
+                    <div class="chip-label">Verde esmeralda</div>
+                </div>
+                <div class="color-chip">
+                    <div class="chip-swatch" style="background:#1B3A4B;"></div>
+                    <div class="chip-label">Azul petróleo</div>
+                </div>
+                <div class="color-chip">
+                    <div class="chip-swatch" style="background:#6B2737;"></div>
+                    <div class="chip-label">Burdeos</div>
+                </div>
+                <div class="color-chip">
+                    <div class="chip-swatch" style="background:#E8E0D0;"></div>
+                    <div class="chip-label">Crema bouclé</div>
+                </div>
+                <div class="color-chip">
+                    <div class="chip-swatch" style="background:#8B5E3C;"></div>
+                    <div class="chip-label">Cognac</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guell-note">
+            <div class="guell-diamond"></div>
+            <p class="guell-text">Catálogo exclusivo <strong>Güell Lamadrid</strong> — más de <strong>200 telas de alta calidad</strong> disponibles en Tapizados Nova Barcelona</p>
+        </div>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · Barcelona</span>
+            <span class="footer-page">06 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

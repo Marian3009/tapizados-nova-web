@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #2D3B25;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-accent {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #C9A84C, rgba(201,168,76,0.3), transparent);
+        }
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 44px;
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.25);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(245, 240, 232, 0.5);
+            text-transform: uppercase;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.25;
+            max-width: 820px;
+            margin-bottom: 28px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .narrative-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: rgba(245, 240, 232, 0.78);
+            line-height: 1.7;
+            max-width: 860px;
+            margin-bottom: 44px;
+        }
+        .narrative-text strong {
+            color: #F5F0E8;
+            font-weight: 600;
+        }
+        .timeline-section {
+            margin-top: auto;
+        }
+        .timeline-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .timeline-track {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            margin-bottom: 0;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.3);
+        }
+        .timeline-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #C9A84C;
+            background: #2D3B25;
+            transform: rotate(45deg);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .timeline-item:first-child .timeline-dot {
+            background: #C9A84C;
+        }
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #C9A84C;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .timeline-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: rgba(245, 240, 232, 0.65);
+            text-align: center;
+            line-height: 1.5;
+            max-width: 160px;
+        }
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            margin-top: 32px;
+            border-top: 1px solid rgba(201, 168, 76, 0.2);
+            padding-bottom: 32px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(245, 240, 232, 0.4);
+            text-transform: uppercase;
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-accent"></div>
+    <div class="slide-body">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <div class="section-line"></div>
+            <span class="section-label">Historia</span>
+        </div>
+
+        <h2 class="main-title">Todo comenzó con un conde inglés que quería sentarse <em>con dignidad</em></h2>
+
+        <p class="narrative-text">
+            En <strong>1773</strong>, el cuarto conde de Chesterfield, Philip Stanhope, encargó a un ebanista un asiento especial: quería que sus invitados pudieran sentarse erguidos sin arrugar la ropa. El resultado fue un sofá de respaldo alto, brazos enrollados al mismo nivel y un tapizado de <strong>botones hundidos</strong> —el capitoné— que distribuía la tensión del tejido de forma uniforme. Nació así una de las piezas de mobiliario más influyentes de la historia.
+        </p>
+
+        <div class="timeline-section">
+            <div class="timeline-label">Línea del Tiempo</div>
+            <div class="timeline-track">
+                <div class="timeline-line"></div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">1773</div>
+                    <div class="timeline-desc">Encargo del conde de Chesterfield</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Siglo XIX</div>
+                    <div class="timeline-desc">Símbolo del poder victoriano en clubes y despachos</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">Siglo XX</div>
+                    <div class="timeline-desc">Icono cultural en cine y televisión</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2000s</div>
+                    <div class="timeline-desc">Renacimiento en el interiorismo contemporáneo</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-year">2026</div>
+                    <div class="timeline-desc">Tendencia global en hogares de lujo</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · Barcelona</span>
+            <span class="footer-page">03 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

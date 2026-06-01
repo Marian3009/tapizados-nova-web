@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #2D3B25, #4A5C3F, #C9A84C);
+        }
+        .image-section {
+            position: relative;
+            width: 1280px;
+            height: 300px;
+        }
+        .hero-image {
+            width: 1280px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center 30%;
+            display: block;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(10, 15, 8, 0.1) 0%,
+                rgba(10, 15, 8, 0.55) 70%,
+                rgba(10, 15, 8, 0.82) 100%
+            );
+        }
+        .image-header {
+            position: absolute;
+            top: 18px;
+            left: 48px;
+            right: 48px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.35);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(245, 240, 232, 0.6);
+            text-transform: uppercase;
+        }
+        .image-title-area {
+            position: absolute;
+            bottom: 24px;
+            left: 48px;
+            right: 48px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.25;
+            max-width: 780px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 28px;
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 48px;
+            margin-bottom: 24px;
+        }
+        .reason-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .reason-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            background: rgba(201, 168, 76, 0.12);
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+        .reason-icon-inner {
+            width: 8px;
+            height: 8px;
+            background: #C9A84C;
+            transform: rotate(45deg);
+        }
+        .reason-content {}
+        .reason-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #2D3B25;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .reason-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #5C3D2E;
+            line-height: 1.5;
+        }
+        .process-section {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid rgba(74, 92, 63, 0.15);
+        }
+        .process-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .process-steps {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        .process-step {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            flex: 1;
+        }
+        .step-box {
+            flex: 1;
+            text-align: center;
+        }
+        .step-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #2D3B25;
+            letter-spacing: 0.5px;
+        }
+        .step-arrow {
+            width: 28px;
+            min-width: 28px;
+            text-align: center;
+            font-size: 14px;
+            color: #C9A84C;
+            font-weight: 600;
+        }
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            padding-bottom: 20px;
+            border-top: 1px solid rgba(74, 92, 63, 0.12);
+            margin-top: 12px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+
+    <div class="image-section">
+        <img class="hero-image" src="/home/ubuntu/webdev-static-assets/chester-restauracion.jpg" alt="Restauración antes y después de un sofá Chester" />
+        <div class="image-overlay"></div>
+        <div class="image-header">
+            <span class="section-number">06</span>
+            <div class="section-line"></div>
+            <span class="section-label">Restauración</span>
+        </div>
+        <div class="image-title-area">
+            <h2 class="main-title">Un Chester de los años 60 tiene una madera que hoy es <em>imposible de encontrar</em></h2>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="reasons-grid">
+            <div class="reason-item">
+                <div class="reason-icon"><div class="reason-icon-inner"></div></div>
+                <div class="reason-content">
+                    <div class="reason-title">Calidad de la Madera</div>
+                    <div class="reason-text">Las estructuras de hace 40–60 años son de madera maciza de primera calidad, superior a la mayoría de las opciones actuales.</div>
+                </div>
+            </div>
+            <div class="reason-item">
+                <div class="reason-icon"><div class="reason-icon-inner"></div></div>
+                <div class="reason-content">
+                    <div class="reason-title">Valor Sentimental</div>
+                    <div class="reason-text">Una pieza familiar tiene una historia que ningún mueble nuevo puede igualar. Cada Chester heredado es único e irrepetible.</div>
+                </div>
+            </div>
+            <div class="reason-item">
+                <div class="reason-icon"><div class="reason-icon-inner"></div></div>
+                <div class="reason-content">
+                    <div class="reason-title">Sostenibilidad</div>
+                    <div class="reason-text">Restaurar es la opción más responsable medioambientalmente: se evita la producción de un mueble nuevo y se alarga la vida útil.</div>
+                </div>
+            </div>
+            <div class="reason-item">
+                <div class="reason-icon"><div class="reason-icon-inner"></div></div>
+                <div class="reason-content">
+                    <div class="reason-title">Economía Inteligente</div>
+                    <div class="reason-text">A menudo restaurar cuesta menos que comprar un Chester de calidad equivalente, con un resultado final superior.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-section">
+            <div class="process-label">Proceso de Restauración en Tapizados Nova</div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-box"><div class="step-name">Inspección</div></div>
+                    <div class="step-arrow">›</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-box"><div class="step-name">Reparación</div></div>
+                    <div class="step-arrow">›</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-box"><div class="step-name">Relleno Nuevo</div></div>
+                    <div class="step-arrow">›</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-box"><div class="step-name">Capitoné</div></div>
+                    <div class="step-arrow">›</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-box"><div class="step-name">Patas</div></div>
+                    <div class="step-arrow">›</div>
+                </div>
+                <div class="process-step">
+                    <div class="step-box"><div class="step-name">Entrega</div></div>
+                    <div class="step-arrow" style="visibility:hidden">›</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · Barcelona</span>
+            <span class="footer-page">07 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

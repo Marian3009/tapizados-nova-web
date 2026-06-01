@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #2D3B25, #4A5C3F, #C9A84C);
+        }
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 48px;
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.35);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #2D3B25;
+            line-height: 1.2;
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #5C3D2E;
+        }
+        .content-grid {
+            display: flex;
+            gap: 56px;
+            flex: 1;
+        }
+        .left-col {
+            flex: 1;
+        }
+        .right-col {
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .points-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .point-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .point-bullet {
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+            background: #C9A84C;
+            transform: rotate(45deg);
+            margin-top: 7px;
+        }
+        .point-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #3A2A1E;
+            line-height: 1.6;
+        }
+        .point-text strong {
+            font-weight: 600;
+            color: #2D3B25;
+        }
+        .highlight-box {
+            border: 1.5px solid #C9A84C;
+            background: rgba(201, 168, 76, 0.06);
+            padding: 28px 24px;
+        }
+        .highlight-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        .highlight-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 400;
+            font-style: italic;
+            color: #2D3B25;
+            line-height: 1.55;
+        }
+        .highlight-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 700;
+            color: rgba(201, 168, 76, 0.2);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        .ornament-block {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .ornament-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .orn-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(74, 92, 63, 0.25);
+        }
+        .orn-diamond {
+            width: 5px;
+            height: 5px;
+            background: #4A5C3F;
+            transform: rotate(45deg);
+        }
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 24px;
+            margin-top: auto;
+            border-top: 1px solid rgba(74, 92, 63, 0.15);
+            padding-bottom: 32px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="slide-body">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <div class="section-line"></div>
+            <span class="section-label">El Sofá Chester</span>
+        </div>
+
+        <h2 class="main-title">El único sofá que ha sobrevivido <em>250 años</em> sin perder vigencia</h2>
+
+        <div class="content-grid">
+            <div class="left-col">
+                <ul class="points-list">
+                    <li class="point-item">
+                        <div class="point-bullet"></div>
+                        <p class="point-text">Nació en la <strong>aristocracia inglesa</strong> y hoy decora los hogares más contemporáneos del mundo, desde Londres hasta Barcelona.</p>
+                    </li>
+                    <li class="point-item">
+                        <div class="point-bullet"></div>
+                        <p class="point-text">Su silueta es <strong>universalmente reconocible</strong>: respaldo alto al nivel de los brazos, brazos enrollados y el inconfundible capitoné de botones hundidos.</p>
+                    </li>
+                    <li class="point-item">
+                        <div class="point-bullet"></div>
+                        <p class="point-text">Convive con estilos tan dispares como el <strong>industrial, el escandinavo y el clásico mediterráneo</strong> sin perder un ápice de su identidad.</p>
+                    </li>
+                    <li class="point-item">
+                        <div class="point-bullet"></div>
+                        <p class="point-text">En <strong>2026</strong>, el Chester es tendencia en interiorismo de lujo a nivel global, con una demanda que no deja de crecer.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="right-col">
+                <div class="highlight-box">
+                    <div class="highlight-label">Dato Destacado</div>
+                    <div class="highlight-number">250</div>
+                    <p class="highlight-text">Años de historia ininterrumpida. El Chester es uno de los 5 diseños de muebles más buscados en el mundo.</p>
+                </div>
+                <div class="ornament-block">
+                    <div class="ornament-row">
+                        <div class="orn-line"></div>
+                        <div class="orn-diamond"></div>
+                        <div class="orn-line"></div>
+                    </div>
+                    <div class="ornament-row">
+                        <div class="orn-line"></div>
+                        <div class="orn-diamond"></div>
+                        <div class="orn-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · Barcelona</span>
+            <span class="footer-page">02 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

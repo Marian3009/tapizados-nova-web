@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #2D3B25, #4A5C3F, #C9A84C);
+        }
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.35);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #2D3B25;
+            line-height: 1.25;
+            max-width: 860px;
+            margin-bottom: 32px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #5C3D2E;
+        }
+        .criteria-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .criteria-table thead tr {
+            background: #2D3B25;
+        }
+        .criteria-table thead th {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: rgba(245, 240, 232, 0.75);
+            padding: 12px 20px;
+            text-align: left;
+        }
+        .criteria-table thead th:first-child {
+            width: 52px;
+            text-align: center;
+        }
+        .criteria-table thead th:nth-child(2) {
+            width: 200px;
+        }
+        .criteria-table tbody tr:nth-child(odd) {
+            background: rgba(74, 92, 63, 0.06);
+        }
+        .criteria-table tbody tr:nth-child(even) {
+            background: rgba(245, 240, 232, 0.5);
+        }
+        .criteria-table tbody td {
+            padding: 14px 20px;
+            vertical-align: middle;
+            border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+        }
+        .td-num {
+            text-align: center;
+            width: 52px;
+        }
+        .num-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: #C9A84C;
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-weight: 700;
+            color: #2D3B25;
+            transform: rotate(45deg);
+        }
+        .num-circle span {
+            transform: rotate(-45deg);
+            display: block;
+        }
+        .td-criterio {
+            width: 200px;
+        }
+        .criterio-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #2D3B25;
+        }
+        .td-exige {
+            width: 440px;
+        }
+        .exige-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #2D3B25;
+            line-height: 1.5;
+        }
+        .exige-text strong {
+            font-weight: 600;
+            color: #3A5C2E;
+        }
+        .check-icon {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background: #4A5C3F;
+            transform: rotate(45deg);
+            margin-right: 8px;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+        .exige-row {
+            display: flex;
+            align-items: center;
+        }
+        .td-alerta {
+        }
+        .alerta-text {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #7A3B2E;
+            line-height: 1.5;
+        }
+        .alerta-text strong {
+            font-weight: 600;
+        }
+        .warn-icon {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 12px solid #C9A84C;
+            margin-right: 8px;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+        .alerta-row {
+            display: flex;
+            align-items: center;
+        }
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            margin-top: auto;
+            border-top: 1px solid rgba(74, 92, 63, 0.15);
+            padding-bottom: 28px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="slide-body">
+        <div class="section-header">
+            <span class="section-number">07</span>
+            <div class="section-line"></div>
+            <span class="section-label">Guía de Compra</span>
+        </div>
+
+        <h2 class="main-title">El precio no es el único indicador de calidad — <em>saber qué mirar</em> lo cambia todo</h2>
+
+        <table class="criteria-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Criterio</th>
+                    <th>Lo que debes exigir</th>
+                    <th>Señal de alerta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="td-num"><div class="num-circle"><span>1</span></div></td>
+                    <td class="td-criterio"><span class="criterio-name">Estructura</span></td>
+                    <td class="td-exige">
+                        <div class="exige-row">
+                            <span class="check-icon"></span>
+                            <span class="exige-text"><strong>Madera maciza</strong> de haya o pino, perfectamente ensamblada y sin crujidos</span>
+                        </div>
+                    </td>
+                    <td class="td-alerta">
+                        <div class="alerta-row">
+                            <span class="warn-icon"></span>
+                            <span class="alerta-text"><strong>Aglomerado o MDF</strong> — se deteriora en pocos años con el uso</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-num"><div class="num-circle"><span>2</span></div></td>
+                    <td class="td-criterio"><span class="criterio-name">Muelles</span></td>
+                    <td class="td-exige">
+                        <div class="exige-row">
+                            <span class="check-icon"></span>
+                            <span class="exige-text"><strong>Muelles de acero templado</strong> cosidos a la estructura, no solo pegados</span>
+                        </div>
+                    </td>
+                    <td class="td-alerta">
+                        <div class="alerta-row">
+                            <span class="warn-icon"></span>
+                            <span class="alerta-text"><strong>Solo espuma rígida</strong> — asiento incómodo y poco duradero</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-num"><div class="num-circle"><span>3</span></div></td>
+                    <td class="td-criterio"><span class="criterio-name">Capitoné</span></td>
+                    <td class="td-exige">
+                        <div class="exige-row">
+                            <span class="check-icon"></span>
+                            <span class="exige-text"><strong>Rombos perfectamente uniformes</strong> en forma, profundidad y espaciado</span>
+                        </div>
+                    </td>
+                    <td class="td-alerta">
+                        <div class="alerta-row">
+                            <span class="warn-icon"></span>
+                            <span class="alerta-text"><strong>Irregularidades visibles</strong> — señal de trabajo apresurado o poca experiencia</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-num"><div class="num-circle"><span>4</span></div></td>
+                    <td class="td-criterio"><span class="criterio-name">Material</span></td>
+                    <td class="td-exige">
+                        <div class="exige-row">
+                            <span class="check-icon"></span>
+                            <span class="exige-text"><strong>Adaptado a tu estilo de vida</strong>: cuero o antimanchas con niños, terciopelo para máxima elegancia</span>
+                        </div>
+                    </td>
+                    <td class="td-alerta">
+                        <div class="alerta-row">
+                            <span class="warn-icon"></span>
+                            <span class="alerta-text"><strong>Tela de baja densidad</strong> — se deforma y desgasta en meses</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="td-num"><div class="num-circle"><span>5</span></div></td>
+                    <td class="td-criterio"><span class="criterio-name">Tamaño</span></td>
+                    <td class="td-exige">
+                        <div class="exige-row">
+                            <span class="check-icon"></span>
+                            <span class="exige-text"><strong>Proporcional al espacio</strong>: el Chester debe ser protagonista, no obstáculo</span>
+                        </div>
+                    </td>
+                    <td class="td-alerta">
+                        <div class="alerta-row">
+                            <span class="warn-icon"></span>
+                            <span class="alerta-text"><strong>Pieza que "aplasta" la sala</strong> — sin espacio para circular cómodamente</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · Barcelona</span>
+            <span class="footer-page">08 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

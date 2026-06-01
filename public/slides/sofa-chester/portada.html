@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .bg-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(10, 15, 8, 0.15) 0%,
+                rgba(10, 15, 8, 0.35) 35%,
+                rgba(10, 15, 8, 0.75) 65%,
+                rgba(10, 15, 8, 0.92) 100%
+            );
+        }
+        .brand-label {
+            position: absolute;
+            top: 36px;
+            left: 48px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(245, 240, 232, 0.85);
+            text-transform: uppercase;
+        }
+        .brand-dot {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            background: #C9A84C;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin: 0 8px;
+        }
+        .year-badge {
+            position: absolute;
+            top: 30px;
+            right: 48px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(201, 168, 76, 0.9);
+            text-transform: uppercase;
+            border: 1px solid rgba(201, 168, 76, 0.4);
+            padding: 6px 14px;
+        }
+        .content-area {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            min-height: 340px;
+        }
+        .pre-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 82px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.05;
+            text-align: center;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+            letter-spacing: -1px;
+        }
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #C9A84C, transparent);
+            margin: 22px auto;
+        }
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(245, 240, 232, 0.88);
+            text-align: center;
+            letter-spacing: 0.5px;
+            margin-bottom: 14px;
+        }
+        .tagline {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: rgba(245, 240, 232, 0.6);
+            text-align: center;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 44px;
+        }
+        .bottom-ornament {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 36px;
+        }
+        .ornament-line {
+            width: 40px;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.5);
+        }
+        .ornament-diamond {
+            width: 6px;
+            height: 6px;
+            background: #C9A84C;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <img class="bg-image" src="/home/ubuntu/webdev-static-assets/chester-portada.jpg" alt="Sofá Chester de cuero cognac en salón mediterráneo" />
+    <div class="overlay"></div>
+
+    <div class="brand-label">
+        Tapizados Nova
+        <span class="brand-dot"></span>
+        Barcelona
+        <span class="brand-dot"></span>
+        +30 años de experiencia
+    </div>
+
+    <div class="year-badge">Artesanía · 2026</div>
+
+    <div class="content-area">
+        <div class="pre-title">Guía Completa</div>
+        <h1 class="main-title">El Sofá Chester</h1>
+        <div class="gold-divider"></div>
+        <p class="subtitle">Historia, Artesanía y Elegancia Atemporal</p>
+        <p class="tagline">Más de dos siglos de buen gusto en un solo mueble</p>
+        <div class="bottom-ornament">
+            <div class="ornament-line"></div>
+            <div class="ornament-diamond"></div>
+            <div class="ornament-line"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

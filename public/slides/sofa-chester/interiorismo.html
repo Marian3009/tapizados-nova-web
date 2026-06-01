@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #F5F0E8;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-bar {
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #2D3B25, #4A5C3F, #C9A84C);
+        }
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-top: 40px;
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.35);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: #2D3B25;
+            line-height: 1.25;
+            max-width: 860px;
+            margin-bottom: 30px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #5C3D2E;
+        }
+        .styles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 16px;
+            flex: 1;
+        }
+        .style-block {
+            display: flex;
+            flex-direction: row;
+            background: rgba(255,255,255,0.45);
+            overflow: hidden;
+        }
+        .style-accent {
+            width: 5px;
+            min-height: 100%;
+            flex-shrink: 0;
+        }
+        .style-content {
+            flex: 1;
+            padding-top: 18px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .style-name {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .style-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            color: #2D3B25;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .style-combo {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #5C4A3A;
+            line-height: 1.55;
+        }
+        .style-combo strong {
+            font-weight: 600;
+            color: #2D3B25;
+        }
+        /* Colores de acento por estilo */
+        .accent-nordico { background: #4A5C3F; }
+        .accent-industrial { background: #5C3D2E; }
+        .accent-organico { background: #B5A882; }
+        .accent-clasico { background: #7A2D3A; }
+
+        .name-nordico { color: #4A5C3F; }
+        .name-industrial { color: #5C3D2E; }
+        .name-organico { color: #8A7A5A; }
+        .name-clasico { color: #7A2D3A; }
+
+        .tip-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: rgba(201, 168, 76, 0.1);
+            border-top: 2px solid #C9A84C;
+            margin-top: 16px;
+            padding-top: 14px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .tip-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #C9A84C;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .tip-divider {
+            width: 1px;
+            height: 32px;
+            background: rgba(201, 168, 76, 0.4);
+            flex-shrink: 0;
+        }
+        .tip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            font-style: italic;
+            color: #2D3B25;
+            line-height: 1.5;
+        }
+        .brand-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 14px;
+            border-top: 1px solid rgba(74, 92, 63, 0.15);
+            padding-bottom: 28px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #4A5C3F;
+            text-transform: uppercase;
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="slide-body">
+        <div class="section-header">
+            <span class="section-number">08</span>
+            <div class="section-line"></div>
+            <span class="section-label">Interiorismo 2026</span>
+        </div>
+
+        <h2 class="main-title">El Chester ya no es solo para salones clásicos — es el mueble <em>más versátil</em> de 2026</h2>
+
+        <div class="styles-grid">
+            <div class="style-block">
+                <div class="style-accent accent-nordico"></div>
+                <div class="style-content">
+                    <div class="style-name name-nordico">Nórdico · Clásico</div>
+                    <div class="style-title">Chester en Terciopelo Verde</div>
+                    <p class="style-combo"><strong>Combina con:</strong> paredes blancas, suelo de madera clara, alfombra de lana natural y lámparas de latón mate. El verde del Chester dialoga con las plantas de interior.</p>
+                </div>
+            </div>
+
+            <div class="style-block">
+                <div class="style-accent accent-industrial"></div>
+                <div class="style-content">
+                    <div class="style-name name-industrial">Industrial · Urbano</div>
+                    <div class="style-title">Chester en Cuero Cognac</div>
+                    <p class="style-combo"><strong>Combina con:</strong> paredes de hormigón visto, estanterías metálicas negras, suelo de cemento pulido y ventanas industriales de acero. El cuero añade calidez al espacio.</p>
+                </div>
+            </div>
+
+            <div class="style-block">
+                <div class="style-accent accent-organico"></div>
+                <div class="style-content">
+                    <div class="style-name name-organico">Orgánico · Contemporáneo</div>
+                    <div class="style-title">Chester en Bouclé Crema</div>
+                    <p class="style-combo"><strong>Combina con:</strong> alfombra de fibras naturales, plantas de gran formato, madera de roble y textiles en lino. La textura del bouclé aporta profundidad sin estridencias.</p>
+                </div>
+            </div>
+
+            <div class="style-block">
+                <div class="style-accent accent-clasico"></div>
+                <div class="style-content">
+                    <div class="style-name name-clasico">Clásico · Renovado</div>
+                    <div class="style-title">Chester en Burdeos</div>
+                    <p class="style-combo"><strong>Combina con:</strong> molduras blancas, lámparas de latón dorado, suelo de parqué oscuro y cuadros con marcos clásicos. El burdeos aporta drama y sofisticación.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <span class="tip-label">Consejo de Estilo</span>
+            <div class="tip-divider"></div>
+            <p class="tip-text">El Chester funciona como pieza focal. Deja que sea el protagonista y construye el resto del salón a su alrededor — no al revés.</p>
+        </div>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · Barcelona</span>
+            <span class="footer-page">08 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

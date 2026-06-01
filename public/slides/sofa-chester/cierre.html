@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #2D3B25;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .top-accent {
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(to right, #C9A84C, rgba(201,168,76,0.4), transparent);
+        }
+        .slide-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 44px;
+            padding-left: 72px;
+            padding-right: 72px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            margin-bottom: 48px;
+        }
+        .section-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 3px;
+        }
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.2);
+        }
+        .section-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(245, 240, 232, 0.4);
+            text-transform: uppercase;
+        }
+        .content-center {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 860px;
+        }
+        .pre-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: rgba(201, 168, 76, 0.7);
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.15;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #C9A84C, transparent);
+            margin: 28px auto;
+        }
+        .subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(245, 240, 232, 0.72);
+            text-align: center;
+            line-height: 1.65;
+            max-width: 640px;
+            margin-bottom: 40px;
+        }
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 44px;
+        }
+        .cta-primary {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #C9A84C;
+            padding-top: 16px;
+            padding-left: 36px;
+            padding-right: 36px;
+            min-width: 340px;
+            justify-content: center;
+        }
+        .cta-primary-icon {
+            width: 10px;
+            height: 10px;
+            background: #2D3B25;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+        .cta-primary-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2.5px;
+            color: rgba(45, 59, 37, 0.65);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        .cta-primary-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #2D3B25;
+            letter-spacing: 0.5px;
+        }
+        .cta-primary-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 16px;
+        }
+        .cta-secondary {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(245, 240, 232, 0.6);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .cta-secondary span {
+            color: rgba(201, 168, 76, 0.8);
+        }
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .orn-line {
+            width: 48px;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.3);
+        }
+        .orn-diamond {
+            width: 7px;
+            height: 7px;
+            background: rgba(201, 168, 76, 0.5);
+            transform: rotate(45deg);
+        }
+        .orn-diamond-center {
+            width: 9px;
+            height: 9px;
+            background: #C9A84C;
+            transform: rotate(45deg);
+        }
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(201, 168, 76, 0.85);
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+        .brand-footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            padding-bottom: 28px;
+        }
+        .footer-brand {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(245, 240, 232, 0.35);
+            text-transform: uppercase;
+        }
+        .footer-url {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            color: rgba(201, 168, 76, 0.5);
+        }
+        .footer-page {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: rgba(201, 168, 76, 0.6);
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-accent"></div>
+    <div class="slide-body">
+        <div class="section-header">
+            <span class="section-number">10</span>
+            <div class="section-line"></div>
+            <span class="section-label">Contacto</span>
+        </div>
+
+        <div class="content-center">
+            <div class="pre-title">Tapizados Nova · Barcelona</div>
+            <h2 class="main-title">¿Tienes un Chester que merece<br><em>una nueva vida?</em></h2>
+            <div class="gold-divider"></div>
+            <p class="subtitle">En Tapizados Nova transformamos muebles con historia en piezas únicas. Cuéntanos tu proyecto y te asesoramos sin compromiso.</p>
+
+            <div class="cta-group">
+                <div class="cta-primary">
+                    <div class="cta-primary-icon"></div>
+                    <div class="cta-primary-text">
+                        <div class="cta-primary-label">WhatsApp</div>
+                        <div class="cta-primary-value">+34 611 491 661</div>
+                    </div>
+                </div>
+                <div class="cta-secondary">Visita nuestro taller en <span>Barcelona</span></div>
+            </div>
+
+            <div class="ornament">
+                <div class="orn-line"></div>
+                <div class="orn-diamond"></div>
+                <div class="orn-diamond-center"></div>
+                <div class="orn-diamond"></div>
+                <div class="orn-line"></div>
+            </div>
+
+            <p class="tagline">Artesanía que se hereda. Calidad que se nota.</p>
+        </div>
+
+        <div class="brand-footer">
+            <span class="footer-brand">Tapizados Nova · +30 años de experiencia artesanal</span>
+            <span class="footer-url">tapizadosnova.com</span>
+            <span class="footer-page">10 / 10</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
